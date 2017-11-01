@@ -7,12 +7,7 @@
 <body>
 
 <div id="app">
-    <input type="text" id="test" v-model="message" />
-    <p>{{ message }}</p>
-    <ul>
-        <li v-for="name in JamesArray" v-text="name"></li>
-    </ul>
-    <button v-on:click="addName">Add name</button>
+    
 </div>
 
 
@@ -23,20 +18,8 @@
     new Vue({
         el: '#app',
         data: {
-            message: 'Hello Vue.js!',
-            JamesArray: [
-                'James',
-                'bob',
-                'Hello'
-            ]
-        },
 
-        methods: {
-            addName: function () {
-                this.JamesArray.push(this.message);
-                this.message = "";
-            }
-        }
+        },
     })
 
 </script>
