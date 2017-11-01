@@ -6,5 +6,47 @@
 </head>
 <body>
 
+    <div id="app">
+        <input type="text" id="test" v-model="message" />
+        <button v-on:click='addName'>
+            Add name
+        </button>
+        <p>{{ message }}</p>
+
+        <ul>
+            <li v-for="name in JamesArray" v-text="name"></li>
+        </ul>
+    </div>
+
+
+    <script src="https://github.com/Jameshudson/learning-vuejs.git"></script>
+
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!',
+                JamesArray: [
+                    'James',
+                    'bob',
+                    'Hello'
+                ]
+            },
+
+            method: {
+                addName(){
+                    alert('Adding name');
+                }
+
+            },
+
+            mounted(){
+
+            },
+        })
+
+    </script>
+
 </body>
 </html>
