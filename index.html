@@ -11,7 +11,7 @@
 <body>
 
 <div id="app">
-    <h1 :class="className">Text Long</h1>
+    <h1 v-text="reversedMessage"></h1>
 </div>
 
 
@@ -24,6 +24,11 @@
         data: {
             title: "hello world",
             className: "colour-red"
+        },
+        computed: {
+            reversedMessage() {
+                return this.title.split("").reverse().join('');
+            }
         }
     })
 
