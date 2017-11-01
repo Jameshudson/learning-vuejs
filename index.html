@@ -6,47 +6,40 @@
 </head>
 <body>
 
-    <div id="app">
-        <input type="text" id="test" v-model="message" />
-        <button v-on:click='addName'>
-            Add name
-        </button>
-        <p>{{ message }}</p>
+<div id="app">
+    <input type="text" id="test" v-model="message"/>
+    <button @click="addName">Add name</button>
+    <p>{{ message }}</p>
 
-        <ul>
-            <li v-for="name in JamesArray" v-text="name"></li>
-        </ul>
-    </div>
+    <ul>
+        <li v-for="name in JamesArray" v-text="name"></li>
+    </ul>
+</div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
 
-    <script>
+<script>
 
-        new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue.js!',
-                JamesArray: [
-                    'James',
-                    'bob',
-                    'Hello'
-                ]
-            },
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!',
+            JamesArray: [
+                'James',
+                'bob',
+                'Hello'
+            ]
+        },
 
-            method: {
-                addName(){
-                    alert('Adding name');
-                }
+        method: {
+            addName: function () {
 
-            },
+            }
+        }
+    })
 
-            mounted(){
-
-            },
-        })
-
-    </script>
+</script>
 
 </body>
 </html>
