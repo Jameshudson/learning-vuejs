@@ -12,7 +12,7 @@
 
 <div id="app">
     <ul>
-        <li v-for="task in tasks" v-text="task.des"></li>
+        <li v-for="task in incompleteTasks" v-text="task.des"></li>
     </ul>
 </div>
 
@@ -35,8 +35,8 @@
             ]
         },
         computed: {
-            reversedMessage() {
-                return this.title.split("").reverse().join('');
+            incompleteTasks() {
+                return this.tasks.filter(task => ! task.completed);
             }
         }
     })
