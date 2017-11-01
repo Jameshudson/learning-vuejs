@@ -11,7 +11,9 @@
 <body>
 
 <div id="app">
-    <h1 v-text="reversedMessage"></h1>
+    <ul>
+        <li v-for="task in tasks" v-text="task.des"></li>
+    </ul>
 </div>
 
 
@@ -23,7 +25,14 @@
         el: '#app',
         data: {
             title: "hello world",
-            className: "colour-red"
+            className: "colour-red",
+            tasks: [
+                {des: "some work", completed: true},
+                {des: "some work 2", completed: false},
+                {des: "some work 3", completed: true},
+                {des: "some work 4", completed: false},
+                {des: "some work 5", completed: false}
+            ]
         },
         computed: {
             reversedMessage() {
