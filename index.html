@@ -11,60 +11,28 @@
 <body>
 
 <div id="app">
-    <!--<ul>-->
-        <!--<li v-for="task in incompleteTasks" v-text="task.des"></li>-->
-    <!--</ul>-->
-    <task-list></task-list>
+    <article>
+        <message header="Title" message="Body!"></message>
+    </article>
 </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
 
 <script>
-    Vue.component('task-list', {
 
-        template: '<div><task v-for="task in tasks">{{task.des}}</task></div>',
+    Vue.component('message',{
+        props: ['header', 'message'],
+        template: '<div><p>{{ header }}</p><p>{{ message }}</p></div>'
+    })
 
-        data() {
-
-            return {
-
-                tasks: [
-                    {des: "some work", completed: true},
-                    {des: "some work 2", completed: false},
-                    {des: "some work 3", completed: true},
-                    {des: "some work 4", completed: false},
-                    {des: "some work 5", completed: false}
-                ]
-            };
-        }
-
-    });
-
-    Vue.component('task', {
-
-        template: '<li><slot></slot></li>',
-
-    });
 
     new Vue({
         el: '#app',
         data: {
-            title: "hello world",
-            className: "colour-red",
-//            tasks: [
-//                {des: "some work", completed: true},
-//                {des: "some work 2", completed: false},
-//                {des: "some work 3", completed: true},
-//                {des: "some work 4", completed: false},
-//                {des: "some work 5", completed: false}
-//            ]
-        },
-//        computed: {
-//            incompleteTasks() {
-//                return this.tasks.filter(task => ! task.completed);
-//            }
-//        }
+
+
+        }
     })
 
 </script>
