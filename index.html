@@ -23,7 +23,13 @@
 
     Vue.component('message',{
         props: ['header', 'message'],
-        template: '<div><p>{{ header }}</p><p>{{ message }}</p></div>'
+        template: '<div v-show="isVisible"><p>{{ header }}</p><p>{{ message }}</p><button @click="isVisible = false">Hide message</button></div>',
+        data() {
+
+            return {
+                isVisible: true
+            };
+        }
     })
 
 
