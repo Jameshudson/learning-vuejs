@@ -11,9 +11,7 @@
 <body>
 
 <div id="app">
-    <article>
-        <message header="Title" message="Body!" v-show="isVisible" @close="isVisible = false"></message>
-    </article>
+    <coupon v-on:applied="onCouponAdded"></coupon>
 </div>
 
 
@@ -21,16 +19,33 @@
 
 <script>
 
-    Vue.component('message',{
-        props: ['header', 'message'],
-        template: `<div><p>{{ header }}</p><p>{{ message }}</p><button @click="$emit('close')">Hide message</button></div>`,
+    Vue.component('coupon',{
+        template: `<input placeholder="Enter your code!" type="text" @blur="onCouponAdded" v-model="coupon">`,
+
+        data() {
+
+            return {
+                coupon
+            }
+        },
+
+        methods: {
+            onCouponAdded() {
+                this.$emit('applied', this.coupon)
+            }
+        }
     })
 
 
     new Vue({
         el: '#app',
         data: {
-            isVisible: true
+
+        },
+        methods:{
+            onCouponAdded() {
+                alert("coupon added!");
+            }
         }
     })
 
